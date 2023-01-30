@@ -24,7 +24,7 @@ def get_int_value(entry):
     except ValueError as e:  # otherwise, is a letter, try to check if is into domain
         # get the ASCII Number of letter code minux 61 so is the value as integer
         if 64 < ord(entry) < 91:
-            return ord(entry) - 54
+            return ord(entry) - 55
         else:
             raise ValueError(f'Numeric system out of range for entry {entry}')
 
@@ -32,7 +32,7 @@ def get_int_value(entry):
 # cast from an int to ASCII, but only from A-Z son numbers [5,40] are valid
 def cast_ascii(value):
     if 10 < value < 36:
-        return chr(value + 54)
+        return chr(value + 55)
     else:
         raise ValueError(f'the number {value} is not valid for this system')
 

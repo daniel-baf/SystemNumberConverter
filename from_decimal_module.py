@@ -3,12 +3,16 @@ import utils
 
 
 def dec_to_any(number, target_base):
-    result: list = []
-    get_value(number, target_base, result)
-    str_final = "";
-    for item in result:
-        str_final += f'{utils.get_ascii_from_int(item)}'
-    return str_final
+    try:
+        result: list = []
+        get_value(number, target_base, result)
+        str_final = "";
+        for item in result:
+            str_final += f'{utils.get_ascii_from_int(item)}'
+        return str_final
+    except ValueError as e:
+        print(f'Unable to recover from error casting to a new base, {e}')
+        raise e
 
 
 # uses the formula N // B = a : b -> b // B = a1 : b1... and final number is an a_(n-1) a_(n-2) ... a_(n-m)

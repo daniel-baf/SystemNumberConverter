@@ -5,12 +5,16 @@ import utils
 
 # Function to cast a number when the base isn't 10
 def cast(number, base):
-    num_dec: int = 0
-    steps = 0
-    for num in utils.get_num_as_list(number, base):
-        num_dec += num * (base ** steps)
-        steps += 1
-    return num_dec
+    try:
+        num_dec: int = 0
+        steps = 0
+        for num in utils.get_num_as_list(number, base):
+            num_dec += num * (base ** steps)
+            steps += 1
+        return num_dec
+    except ValueError as e:
+        print(f'Error trying to cast to decimal, {e}')
+        raise e
 
 
 # public function, call it to cast any base number to decimal system

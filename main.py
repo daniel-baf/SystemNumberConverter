@@ -9,8 +9,8 @@ try:
 
     # Objective, cast 143(5) to base 8
     # 143 -> 48 -> 60
-    entry = "153"
-    base = 7
+    entry = "51C231A"
+    base = 16
     target_base = 15
     decimal = DSC.any_to_dec(entry, base)
     output = FDM.dec_to_any(decimal, target_base)
@@ -19,4 +19,4 @@ try:
     print(f'The value of {entry}({base}) = {decimal}(10)')
     print(f'The value of {decimal}(10) = {output}({target_base})')
 except ValueError as e:
-    print(f'Error: ${e}')
+    print(f'Error: {e}')
