@@ -11,7 +11,7 @@ try:
     # 143 -> 48 -> 60
     entry = "51C231A"
     base = 16
-    target_base = 15
+    target_base = 36
     decimal = DSC.any_to_dec(entry, base)
     output = FDM.dec_to_any(decimal, target_base)
 
