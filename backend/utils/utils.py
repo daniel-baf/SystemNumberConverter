@@ -1,3 +1,8 @@
+# import call method from subprocess module
+import os
+from subprocess import call
+
+
 # transform any number to a array of numbers
 def get_num_as_list(number, base):
     data: list = []
@@ -40,3 +45,11 @@ def cast_ascii(value):
 # return a letter if the number is higher tan 9, or a number if is between 0 and 9
 def get_ascii_from_int(value):
     return value if 0 <= value < 10 else cast_ascii(value)
+
+
+# clear window
+# check and make call for specific operating system
+# for mac and linux(here, os.name is 'posix') and windows 'cls'
+def clear_screen():
+    # check and make call for specific operating system
+    _ = call('clear' if os.name == 'posix' else 'cls')
